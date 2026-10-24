@@ -67,7 +67,7 @@ main {
 }
 
 .character {
-  background-color: #8b68b9;
+  background-color: #453970;
   color: #fff;
   border-radius: 10px;
   padding: 10px;
@@ -135,5 +135,41 @@ header {
   padding: 24px 12px;
   letter-spacing: 1px;
 }
-
 }
+
+.presentacion {
+  max-width: 850px;
+  margin: 30px auto 25px;
+  padding: 0 25px;
+  text-align: center;
+  color: #333;
+}
+
+.presentacion h2 {
+  color: #664caf;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.presentacion p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+  .presentacion {
+    margin: 22px auto;
+    padding: 0 18px;
+  }
+
+  .presentacion h2 {
+    font-size: 21px;
+  }
+
+  .presentacion p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
