@@ -1,25 +1,27 @@
 
 document.addEventListener("DOMContentLoaded", async function () {
     const container = document.getElementById("character-container");
-    const apiUrl = "https://api.jikan.moe/v4/top/characters?limit=25";
 
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(
+            "https://api.disneyapi.dev/character?pageSize=30"
+        );
 
         if (!response.ok) {
             throw new Error("Error HTTP: " + response.status);
         }
 
         const result = await response.json();
-        const characters = result.data || [];
+        const characters = Array.isArray(result.data)
+            ? result.data
+            : result.data
+                ? [result.data]
+                : [];
 
         container.replaceChildren();
 
         characters.forEach(character => {
-            const imageUrl =
-                character.images?.jpg?.image_url ||
-                character.images?.webp?.image_url;
-
+            const imageUrl = character.imageUrl;
             if (!imageUrl) return;
 
             const card = document.createElement("div");
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             const image = document.createElement("img");
             image.src = imageUrl;
-            image.alt = character.name || "Personaje de anime";
+            image.alt = character.name || "Personaje Disney";
             image.loading = "lazy";
 
             const name = document.createElement("p");
@@ -43,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             container.textContent = "No se encontraron imágenes.";
         }
     } catch (error) {
-        console.error("Error al cargar anime:", error);
+        console.error("Error al cargar Disney:", error);
         container.textContent =
             "No se pudieron cargar los personajes. Intenta más tarde.";
     }
