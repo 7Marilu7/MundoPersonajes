@@ -1,4 +1,3 @@
-
 body {
   color: white;
   margin: 0;
@@ -8,17 +7,30 @@ body {
 
 header {
   text-align: center;
-  padding: 20px;
-  background-color: #664caf;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #49318c, #664caf, #8b68b9);
   color: white;
   font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 12px rgba(50, 30, 90, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  display: block;
+  width: 75px;
+  height: 4px;
+  background-color: #e0d4ff;
+  border-radius: 10px;
+  margin: 12px auto 0;
 }
 
 main {
   text-align: center;
 }
-
-/* TARJETAS DEL INICIO */
 .mosaico {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 220px));
@@ -46,7 +58,6 @@ main {
   margin: 10px 0 2px;
 }
 
-/* CONTENEDOR DE LAS TARJETAS DE LAS APIS */
 .character-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 220px));
@@ -55,7 +66,6 @@ main {
   margin: 20px;
 }
 
-/* TARJETAS GENERADAS POR LAS APIS */
 .character {
   background-color: #8b68b9;
   color: #fff;
@@ -73,7 +83,6 @@ main {
   transform: scale(1.03);
 }
 
-/* TODAS LAS IMÁGENES DE LAS APIS DEL MISMO TAMAÑO */
 .character img {
   width: 100%;
   height: 180px;
@@ -94,7 +103,6 @@ main {
   font-weight: bold;
 }
 
-/* ADAPTACIÓN A TABLETS Y CELULARES */
 @media (max-width: 750px) {
   .mosaico,
   .character-container {
@@ -121,8 +129,11 @@ main {
   .character img {
     height: 150px;
   }
+  
+header {
+  font-size: 26px;
+  padding: 24px 12px;
+  letter-spacing: 1px;
+}
 
-  header {
-    font-size: 28px;
-  }
 }
