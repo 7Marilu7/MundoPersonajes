@@ -94,7 +94,7 @@ La disponibilidad y respuesta de los datos dependen de los servicios externos.
 
 ## Estado del proyecto
 
-Proyecto desarrollado como parte de un portafolio personal.
+Proyecto escolar desarrollado como práctica de diseño y desarrollo web.
 
 ## Autoría
 
